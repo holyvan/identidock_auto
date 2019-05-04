@@ -1,0 +1,25 @@
+identi3:
+  image: ident1 
+  ports:
+   - "5000:5000"
+  environment:
+    ENV: DEV 
+  volumes:
+    - ./app:/app
+
+identi2:
+  image: ident1 
+  ports:
+   - "9090"
+   - "9191"
+  volumes:
+    - ./app:/app
+
+identi4:
+  image: iden2 
+  ports:
+   - "6000:5000"
+  volumes:
+    - ./app:/app
+  command: ["python","identidock.py"]
+
